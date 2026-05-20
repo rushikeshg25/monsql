@@ -1,6 +1,9 @@
 package cmd
 
-import "net/url"
+import (
+	"errors"
+	"net/url"
+)
 
 type monsql struct {
 	mongoURL string
@@ -28,4 +31,11 @@ func validateAndSanitizeURL(rawURL string) (string, error) {
 		return "", err
 	}
 	return sanitized.String(), nil
+}
+
+func (m *monsql) run() error {
+	//parse the SQL Query
+
+	err := errors.New("Dummy")
+	return err
 }
